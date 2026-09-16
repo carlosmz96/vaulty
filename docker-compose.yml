@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: vaulty-postgres
+    environment:
+      POSTGRES_DB: vaulty
+      POSTGRES_USER: vaulty
+      POSTGRES_PASSWORD: vaulty
+    ports:
+      - "5432:5432"
+    volumes:
+      - vaulty_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  vaulty_postgres_data:
